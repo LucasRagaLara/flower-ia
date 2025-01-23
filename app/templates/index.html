@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Flask API with Tailwind</title>
+</head>
+<body class="bg-[url('https://wallpapers.com/images/hd/dark-floral-1920-x-1080-background-6n7r3lgaznof73i5.jpg')] bg-cover bg-no-repeat bg-center flex flex-col backdrop-blur-sm text-white min-h-screen">
+
+    <form id="apiForm" class="flex flex-col lg:items-end justify-center lg:w-[95%] lg:float-right">
+      <div class="flex flex-col items-center justify-center lg:h-[90vh]">
+        <div class="bg-orange-300 rounded p-3 lg:h-auto h-screen">
+          <h1 class="text-3xl font-bold mb-4 flex text-orange-900 mb-6 text-center mt-3">AVERIGUA EL TIPO DE FLOR</h1>
+          <div class="flex justify-center items-center gap-x-6 lg:flex-row flex-col">
+            <input 
+            class="text-[#333] p-2 my-5 rounded-lg"
+              type="number"
+              step="any"
+              id="length_sepal"
+              class="border rounded p-2 w-1/2"
+              placeholder="Largo sépalo"
+              required
+              min="0.1"
+              max="100"
+            />
+            <input
+            class="text-[#333] p-2 my-5 rounded-lg"
+            type="number"
+            step="any"
+            id="length_petal"
+            placeholder="Largo pétalo"
+            required
+            min="0.1"
+            max="100"
+          />
+        </div>
+        <div class="flex justify-center items-center gap-x-6 lg:flex-row flex-col">
+          <input 
+          class="text-[#333] p-2 my-5 rounded-lg"
+            type="number"
+            step="any"
+            id="width_sepal"
+            class="border rounded p-2 w-1/2"
+            placeholder="Ancho sépalo"
+            required
+            min="0.1"
+            max="100"
+          />
+          <input
+          class="text-[#333] p-2 my-5 rounded-lg"
+          type="number"
+          step="any"
+          id="width_petal"
+          placeholder="Ancho pétalo"
+          required
+          min="0.1"
+          max="100"
+        />
+      </div>
+        <div class="flex items-center justify-center w-full my-3"> 
+          <button type="submit" class="bg-orange-500 text-white text-center px-4 py-2 rounded hover:bg-orange-900 font-bold">Averiguar</button>
+        </div>
+        <div id="result" class="mt-4 text-lg font-bold text-orange-900"></div>
+        </div>
+      </div>
+    </form>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
