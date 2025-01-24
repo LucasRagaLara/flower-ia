@@ -29,7 +29,7 @@ def compile_fit(capas, x, y, epochs, activation, x_validacion, y_validacion):
     # Capa de salida
     model.add(tf.keras.layers.Dense(3, activation='softmax'))  # 3 clases en el dataset Iris
     # Compilar el modelo
-    model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+    model.compile(loss='sparse_categorical_crossentropy', metrics=['accuracy'])
     # Entrenar el modelo
     history = model.fit(x, y, epochs=epochs, verbose=1, validation_data=(x_validacion, y_validacion))
     
@@ -49,20 +49,19 @@ def graficar_perdida(history):
 x_entrenamiento, y_entrenamiento, x_validacion, y_validacion = get_datos()
 
 redes_neuronales = [
-    [16],  
-    [32],
-    [16],  
+    [8],  
+    [16],
+    [8],  
 ]
 
 # Entrenar los modelos y mostrar los resultados
 for index, capas in enumerate(redes_neuronales):
     # print(f"\nEntrenando el modelo {index + 1} con la configuración: {capas}")
     
-    modelo, historial = compile_fit(capas, x_entrenamiento, y_entrenamiento, epochs=40, activation='selu', x_validacion=x_validacion, y_validacion=y_validacion)
+    modelo, historial = compile_fit(capas, x_entrenamiento, y_entrenamiento, epochs=100, activation='selu', x_validacion=x_validacion, y_validacion=y_validacion)
     # Evaluar el modelo
     perdida, precision = modelo.evaluate(x_validacion, y_validacion, verbose=0)
     print(f"Pérdida: {perdida:.4f}, Precisión: {precision:.4f}")
-    
     
 graficar_perdida(historial)
 # Guardar el modelo

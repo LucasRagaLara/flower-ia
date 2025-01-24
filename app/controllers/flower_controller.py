@@ -31,7 +31,7 @@ def predict():
         
         if prediccion is None:
             return jsonify({'error': 'Error en la predicción'}), 500
-        
+    
         return jsonify({'prediction': prediccion})
     except Exception as e:
         return jsonify({'error': f'Error en la solicitud: {str(e)}'}), 400

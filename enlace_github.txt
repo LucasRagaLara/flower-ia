@@ -1,0 +1,7 @@
+enlace al GitHub: 
+
+https://github.com/LucasRagaLara/flower-ia
+
+clonar repo:
+
+git clone https://github.com/LucasRagaLara/flower-ia.git
